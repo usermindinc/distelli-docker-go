@@ -20,9 +20,9 @@ VOLUME /var/lib/docker
 
 # Install gosu
 ENV GOSU_VERSION 1.9
-RUN sudo curl -o /bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.9/gosu-$(dpkg --print-architecture)" \
-     && sudo chmod +x /bin/gosu
+RUN curl -o /bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.9/gosu-$(dpkg --print-architecture)" \
+     && chmod +x /bin/gosu
 
 # An informative file I like to put on my shared images
-RUN sudo sh -c "echo 'Distelli Go Build Image maintained by Brian McGehee bmcgehee@distelli.com' >> /distelli_build_image.info"
+RUN echo 'Distelli Go Build Image maintained by Brian McGehee bmcgehee@distelli.com' >> /distelli_build_image.info
 
