@@ -10,7 +10,7 @@ RUN useradd -ms /bin/bash distelli
 WORKDIR /home/distelli
 
 # Update the .ssh/known_hosts file:
-RUN sudo sh -c "ssh-keyscan -H github.com bitbucket.org >> /etc/ssh/ssh_known_hosts"
+RUN ssh-keyscan -H github.com bitbucket.org >> /etc/ssh/ssh_known_hosts
 
 # Install Distelli CLI to coordinate the build in the container
 RUN curl -sSL https://www.distelli.com/download/client | sh 
