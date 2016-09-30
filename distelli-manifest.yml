@@ -1,4 +1,4 @@
-bmcgehee/docker-go-build-example:
+usermindinc/distelli-docker-go:
 
   Build:
     - echo "--Creating Docker Image--"

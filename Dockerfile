@@ -24,5 +24,5 @@ RUN curl -o /bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.9
      && chmod +x /bin/gosu
 
 # An informative file I like to put on my shared images
-RUN echo 'Distelli Go Build Image maintained by Brian McGehee bmcgehee@distelli.com' >> /distelli_build_image.info
+RUN echo 'Distelli Go Build Image created by Brian McGehee bmcgehee@distelli.com' >> /distelli_build_image.info
 
