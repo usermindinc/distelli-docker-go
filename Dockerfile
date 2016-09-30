@@ -9,6 +9,9 @@ RUN useradd -ms /bin/bash distelli
 # Set /home/distelli as the working directory
 WORKDIR /home/distelli
 
+#Make sudo available
+RUN apt-get update && apt-get -y install sudo
+
 # Update the .ssh/known_hosts file:
 RUN ssh-keyscan -H github.com bitbucket.org >> /etc/ssh/ssh_known_hosts
 
