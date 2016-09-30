@@ -1,4 +1,4 @@
-usermindinc/distelli-docker-go:
+usermind/distelli-docker-go:
 
   Build:
     - echo "--Creating Docker Image--"
