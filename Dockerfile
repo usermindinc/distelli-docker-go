@@ -1,4 +1,4 @@
-FROM golang:1.6-onbuild
+FROM golang:1.6
 
 # Run as root
 USER root
@@ -8,6 +8,11 @@ RUN useradd -ms /bin/bash distelli
 
 # Set /home/distelli as the working directory
 WORKDIR /home/distelli
+
+#Add github keys
+RUN mkdir /home/distelli/.ssh
+ADD id_rsa /home/distelli/.ssh/id_rsa
+ADD id_rsa.pub /home/distelli/.ssh/id_rsa.pub
 
 #Make sudo available
 RUN apt-get update && apt-get -y install sudo
