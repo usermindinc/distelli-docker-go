@@ -12,6 +12,7 @@ WORKDIR /home/distelli
 #Add github keys
 RUN mkdir /home/distelli/.ssh
 ADD id_rsa /home/distelli/.ssh/id_rsa
+RUN chown distelli:distelli /home/distelli/.ssh/id_rsa
 RUN chmod 400 /home/distelli/.ssh/id_rsa
 ADD id_rsa.pub /home/distelli/.ssh/id_rsa.pub
 
