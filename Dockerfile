@@ -9,12 +9,13 @@ RUN useradd -ms /bin/bash distelli
 # Set /home/distelli as the working directory
 WORKDIR /home/distelli
 
-#Add github keys
+#Add github stuff
 RUN mkdir /home/distelli/.ssh
 ADD id_rsa /home/distelli/.ssh/id_rsa
-RUN chown distelli:distelli /home/distelli/.ssh/id_rsa
-RUN chmod 400 /home/distelli/.ssh/id_rsa
 ADD id_rsa.pub /home/distelli/.ssh/id_rsa.pub
+RUN chown -R distelli:distelli /home/distelli/.ssh
+RUN chmod 400 /home/distelli/.ssh/id_rsa
+ADD gitconfig /home/distelli/.gitconfig
 
 #Make sudo available
 RUN apt-get update && apt-get -y install sudo
@@ -36,3 +37,4 @@ RUN curl -o /bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.9
 # An informative file I like to put on my shared images
 RUN echo 'Distelli Go Build Image created by Brian McGehee bmcgehee@distelli.com' >> /distelli_build_image.info
 
+USER distelli
