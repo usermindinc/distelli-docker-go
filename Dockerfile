@@ -4,7 +4,7 @@ FROM golang:1.6
 USER root
 
 # Create Distelli user
-RUN useradd -ms /bin/bash distelli 
+RUN useradd -ms /bin/bash distelli
 
 # Set /home/distelli as the working directory
 WORKDIR /home/distelli
@@ -36,5 +36,3 @@ RUN curl -o /bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.9
 
 # An informative file I like to put on my shared images
 RUN echo 'Distelli Go Build Image created by Brian McGehee bmcgehee@distelli.com' >> /distelli_build_image.info
-
-USER distelli
